@@ -1,0 +1,81 @@
+// ErgoMouse wire protocol — source of truth.
+// This is a documentation-oriented schema (not wired to protoc codegen yet).
+// Actual on-wire format is fixed-size binary for latency reasons; see
+// docs/ARCHITECTURE.md §5 and docs/PROTOCOL.md for the exact byte layout.
+// This file exists so Kotlin and Rust bindings can be generated from ONE
+// definition instead of hand-duplicated structs drifting out of sync.
+
+syntax = "proto3";
+package ergomouse;
+
+enum PacketType {
+  UNKNOWN     = 0;
+  HELLO       = 1;
+  HEARTBEAT   = 2;
+  MOVE        = 16;
+  CLICK       = 17;
+  SCROLL      = 18;
+  MODIFIER    = 19;
+  DRAG_BEGIN  = 20;
+  DRAG_END    = 21;
+  BATTERY     = 32;
+  MODE        = 33;
+  ACK         = 254;
+  BYE         = 255;
+}
+
+enum Button {
+  LEFT   = 0;
+  RIGHT  = 1;
+  MIDDLE = 2;
+}
+
+message Header {
+  uint32 version     = 1;
+  PacketType type    = 2;
+  uint32 seq         = 3; // monotonic, mod 65536 on the wire
+}
+
+message Move {
+  sint32 dx              = 1; // fixed-point Q8.8 on the wire
+  sint32 dy               = 2;
+  uint32 timestamp_ms     = 3; // capture time, mod 65536 on wire
+  bool precision_mode     = 4;
+  bool drag_active        = 5;
+}
+
+message Click {
+  Button button = 1;
+  bool down      = 2;
+}
+
+message Scroll {
+  sint32 dx = 1;
+  sint32 dy = 2;
+}
+
+message Modifier {
+  bool ctrl  = 1;
+  bool shift = 2;
+  bool alt   = 3;
+}
+
+message Hello {
+  string device_id   = 1;
+  bytes  pubkey       = 2;
+  string one_time_token = 3;
+}
+
+message Battery {
+  uint32 percent = 1;
+  bool charging   = 2;
+}
+
+message Mode {
+  enum Profile {
+    PRODUCTIVITY = 0;
+    GAMING       = 1;
+    PRECISION    = 2;
+  }
+  Profile profile = 1;
+}
