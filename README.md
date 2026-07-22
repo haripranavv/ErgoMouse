@@ -1,28 +1,33 @@
-# ErgoMouse
+# Ergomouse 🖱️📱
 
-Turn an Android phone into a comfortable, ultra-low-latency mouse/trackpad
-for Windows, macOS, and Linux — built for hours of one-handed use, not just
-remote control.
+Ergomouse is a custom-built, dual-mode hardware-to-software pipeline that turns an Android smartphone into a high-performance trackpad for Windows. 
 
-- **Full architecture, protocol, UI/UX, and roadmap:** [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-- **Wire protocol schema:** [`protocol/schema/packet.proto`](protocol/schema/packet.proto)
-- **Android app:** [`android-app/`](android-app/) — Kotlin + Jetpack Compose
-- **Desktop receiver:** [`desktop-receiver/`](desktop-receiver/) — Rust, native HID per OS
+It bypasses standard, laggy third-party apps by using a custom Android UI to capture raw touch data, packaging it into UDP network packets, and firing it to a blazing-fast Rust receiver injected directly into the Windows OS.
 
-## Status
+## 🚀 Features
+* **Zero-Latency Wi-Fi Tunnel:** Uses UDP Datagram Sockets on Port 51234 for instant cursor response.
+* **Two-Finger Scrolling:** Custom panning math cleanly maps Android touch offsets to Windows scroll wheel increments.
+* **Invisible Background Server:** The Rust receiver is compiled in "Ghost Mode" (`windows_subsystem`) to run completely silently in the background without cluttering the taskbar.
+* **Modern Android UI:** Built entirely in Kotlin and Jetpack Compose.
 
-Phase 0: repo scaffold, protocol schema, and core skeletons in place
-(palm rejection filter, input intent model, packet decoder, HID injector
-trait, Gradle/Cargo build files). See §9 of the architecture doc for the
-phased build plan.
+## 🛠️ Tech Stack
+* **Mobile Client:** Kotlin, Jetpack Compose, Android `DatagramSocket`.
+* **PC Server:** Rust, Tokio (Async Networking), Windows API mouse injection.
 
-## Quick orientation
+## ⚙️ How to Run It
 
-| I want to... | Look at... |
-|---|---|
-| Understand the whole system | `docs/ARCHITECTURE.md` §1–2 |
-| See the exact byte layout on the wire | `docs/ARCHITECTURE.md` §5 |
-| See how palm rejection works | `docs/ARCHITECTURE.md` §4.3 + `android-app/.../input/PalmRejectionFilter.kt` |
-| Add a new gesture | `android-app/.../input/InputIntent.kt` then wire into `GestureRecognizer.kt` |
-| Add a new OS backend | implement `MouseInjector` in `desktop-receiver/src/platform/<os>/` |
-| Check the build/dev roadmap | `docs/ARCHITECTURE.md` §9 |
+### 1. The Windows Server
+1. Download or compile `desktop-receiver.exe`.
+2. Double-click to run. (Note: The app runs invisibly in the background).
+3. *To close the server:* Open Task Manager (Ctrl + Shift + Esc) and end `desktop-receiver.exe`.
+
+### 2. The Android Client
+1. Install the Ergomouse APK on your phone.
+2. Ensure your phone and PC are on the same Wi-Fi network.
+3. Enter your PC's local IP address into the app and connect.
+4. Swipe away! 
+
+## 🧠 What I Learned
+* Handling raw pointer/touch event math across two different coordinate systems.
+* Designing binary network packets byte-by-byte to minimize payload size.
+* Compiling Rust into a standalone, optimized Windows executable.
