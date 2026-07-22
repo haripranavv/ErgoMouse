@@ -1,0 +1,5 @@
+C:\ErgoMouse\desktop-receiver\target\release\build\proc-macro2-c06d6cbc2967ee11\build_script_build-c06d6cbc2967ee11.d: C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-1.0.106\build.rs
+
+C:\ErgoMouse\desktop-receiver\target\release\build\proc-macro2-c06d6cbc2967ee11\build_script_build-c06d6cbc2967ee11.exe: C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-1.0.106\build.rs
+
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-1.0.106\build.rs:

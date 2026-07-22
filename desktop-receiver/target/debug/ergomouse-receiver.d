@@ -1,0 +1,1 @@
+C:\ErgoMouse\desktop-receiver\target\debug\ergomouse-receiver.exe: C:\ErgoMouse\desktop-receiver\src\hid\injector.rs C:\ErgoMouse\desktop-receiver\src\main.rs C:\ErgoMouse\desktop-receiver\src\net\packet.rs

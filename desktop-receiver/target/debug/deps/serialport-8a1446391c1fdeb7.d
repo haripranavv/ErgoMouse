@@ -1,0 +1,10 @@
+C:\ErgoMouse\desktop-receiver\target\debug\deps\serialport-8a1446391c1fdeb7.d: C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\lib.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\mod.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\com.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\dcb.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\enumerate.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\error.rs
+
+C:\ErgoMouse\desktop-receiver\target\debug\deps\libserialport-8a1446391c1fdeb7.rmeta: C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\lib.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\mod.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\com.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\dcb.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\enumerate.rs C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\error.rs
+
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\lib.rs:
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\mod.rs:
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\com.rs:
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\dcb.rs:
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\enumerate.rs:
+C:\Users\harip\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serialport-4.9.0\src\windows\error.rs:
